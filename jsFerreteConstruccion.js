@@ -20,7 +20,7 @@ alert("La cantidad de alambre a comprar es: "+perimetro+" metros.");
 function Circulo () 
 {
 var radio=document.getElementById("Radio").value;
-var circunferencia= parseInt(radio) * 3.14 * 3; 
+var circunferencia= parseInt(radio) * 2 * 3.14 * 3; 
 alert("La cantidad de alambre a comprar es: "+circunferencia+" metros.");
 
 }
