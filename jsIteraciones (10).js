@@ -1,53 +1,48 @@
 function mostrar()
 {
-	var numero;
-	var respuesta="si";
-	var acNegativo=0;
-	var acPositivo=0;
-	var contpos=0;
-	var contneg=0;
-	var contcero=0;
-	var contpar=0;
-	var contimpar=0;
-	
-	numero=prompt("Ingrese un Numero");
-	respuesta=prompt("¿Desea ingresar otro numero?");
-	//alert(respuesta);
-	while (respuesta== "si"|| respuesta=="SI")
-	{
-		numero=prompt("Ingrese un Numero");
-		
-		if (numero % 2==0)
+var respuesta= "si"
+var num;
+var aNegativo=0;
+var aPositivo=0;
+var cNegativo=0;
+var cPositivo=0;
+var cCero=0;
+var cPar=0;
+
+while (respuesta != "no")
+{
+	num=parseInt(prompt("Ingrese un numero"));
+		if (num==0)
 		{
-			 contpar=contpar+1;
+			cCero++
 		}
-		
-		if (numero==0)
+		if (num %2==0)
 		{
-			contcero=contcero+1;
+			cPar++
+		}
+		 if (num >= 0)
+		{
+			cPositivo++;
+			aPositivo= aPositivo + num;
 		}
 		else
 		{
-			if (numero > 0)
-			{
-				contpos= contpos+1;
-				acPositivo= numero + parseInt(acPositivo);
-			}
-			else
-			{
-				contneg=contneg+1;
-				acNegativo= numero + parseInt(acNegativo);
-			}
-			
+			cNegativo++;
+			aNegativo= aNegativo + num;
 		}
+		
+	respuesta=prompt("¿Desea ingresar otro numero?");
+}
 
-	respuesta=prompt("¿Desea ingresar otro numero?");	
-	}
 
-	
-	document.write("cantidad de positivos"+contpos);
-	document.write("cantidad de negativos"+contneg);
-	document.write("cantidad de ceros"+contcero);
-
+document.write("suma negativos: "+aNegativo+"<br>");
+document.write("suma positivos: "+aPositivo+"<br>");
+document.write("cantidad de positivos: "+cPositivo+"<br>");
+document.write("cantidad de negativos: "+cNegativo+"<br>");
+document.write("cantidad de ceros: "+cCero+"<br>");
+document.write("cantidad de numeros pares: "+cPar+"<br>");
+document.write("promedio positivos: "+ aPositivo/cPositivo +"<br>");
+document.write("promedio negativos: "+ aNegativo/cNegativo +"<br>");
+document.write("deferencia de positivos y negativos: "+ aPositivo+aNegativo +"<br>");
 
 }//FIN DE LA FUNCIÓN
